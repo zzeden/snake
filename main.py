@@ -4,7 +4,7 @@ SIZE_BLOCK = 20
 FRAME_COLOR = (0, 255, 204)
 WHITE = (255, 255, 255)
 BLUE = (204, 255, 255)
-HEADER_COLOR = (0,204,153)
+HEADER_COLOR = (0, 204, 153)
 COUNT_BLOCKS = 20
 HEADER_MARGIN = 70
 MARGIN = 1
@@ -13,6 +13,13 @@ size = [(SIZE_BLOCK + MARGIN) * COUNT_BLOCKS + 20, (SIZE_BLOCK + MARGIN) * COUNT
 
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption("snake")
+
+
+def draw_block(colori, rowi, columni):
+    pygame.draw.rect(screen, colori,
+                     [10 + SIZE_BLOCK * columni + columni, HEADER_MARGIN + SIZE_BLOCK * rowi + rowi, SIZE_BLOCK,
+                      SIZE_BLOCK])
+
 
 while True:
     for event in pygame.event.get():
@@ -36,6 +43,6 @@ while True:
                     color = WHITE
                 else:
                     color = BLUE
-            pygame.draw.rect(screen, color, [10 + SIZE_BLOCK * calonka + calonka, HEADER_MARGIN + SIZE_BLOCK * row + row, SIZE_BLOCK, SIZE_BLOCK])
+            draw_block(color, row, calonka)
 
     pygame.display.flip()
