@@ -1,6 +1,8 @@
 import pygame
 import time
 
+from snakeblock import SnakeBlock
+
 SIZE_BLOCK = 20
 FRAME_COLOR = (0, 255, 204)
 WHITE = (255, 255, 255)
@@ -11,7 +13,7 @@ COUNT_BLOCKS = 20
 HEADER_MARGIN = 70
 MARGIN = 1
 
-snake_block = [(1, 1), (1, 2), (1, 3), (2, 3)]
+snake_block = [SnakeBlock(1, 1), SnakeBlock(1, 2), SnakeBlock(1, 3), SnakeBlock(2, 3)]
 size = [(SIZE_BLOCK + MARGIN) * COUNT_BLOCKS + 20, (SIZE_BLOCK + MARGIN) * COUNT_BLOCKS + HEADER_MARGIN + 10]
 
 screen = pygame.display.set_mode(size)
@@ -51,6 +53,6 @@ while True:
 
     time.sleep(1)
     for s in snake_block:
-        draw_block(SNAKE_COLOR, s[0] ,s[1])
+        draw_block(SNAKE_COLOR, s.x, s.y)
 
     pygame.display.flip()
