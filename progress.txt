@@ -1,0 +1,5 @@
+Создаем игру Змейка на python pygame
+https://www.youtube.com/playlist?list=PLQAt0m1f9OHun6Q9uZPNryl5gXm1ng_kd
+
+
+Часть 5 Движение змейки Snake game Python, 2:13
