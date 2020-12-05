@@ -13,7 +13,7 @@ COUNT_BLOCKS = 20
 HEADER_MARGIN = 70
 MARGIN = 1
 
-snake_block = [SnakeBlock(1, 1), SnakeBlock(1, 2), SnakeBlock(1, 3), SnakeBlock(2, 3)]
+snake_blocks = [SnakeBlock(1, 1), SnakeBlock(1, 2), SnakeBlock(1, 3), SnakeBlock(2, 3)]
 size = [(SIZE_BLOCK + MARGIN) * COUNT_BLOCKS + 20, (SIZE_BLOCK + MARGIN) * COUNT_BLOCKS + HEADER_MARGIN + 10]
 
 screen = pygame.display.set_mode(size)
@@ -52,7 +52,7 @@ while True:
             draw_block(color, row, calonka)
 
     time.sleep(1)
-    for s in snake_block:
+    for s in snake_blocks:
         draw_block(SNAKE_COLOR, s.x, s.y)
 
     pygame.display.flip()
